@@ -35,7 +35,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/inserir",
+					"raw": "http://localhost:5000/api/v1/professor/inserir",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -44,7 +44,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"inserir"
 					]
 				}
@@ -80,7 +80,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/inserir",
+					"raw": "http://localhost:5000/api/v1/professor/inserir",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -89,7 +89,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"inserir"
 					]
 				}
@@ -116,7 +116,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/listar",
+					"raw": "http://localhost:5000/api/v1/professor/listar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -125,7 +125,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"listar"
 					]
 				}
@@ -161,7 +161,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/atualizar",
+					"raw": "http://localhost:5000/api/v1/professor/atualizar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -170,7 +170,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"atualizar"
 					]
 				}
@@ -197,7 +197,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/listar",
+					"raw": "http://localhost:5000/api/v1/professor/listar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -206,7 +206,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"listar"
 					]
 				}
@@ -242,7 +242,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/excluir",
+					"raw": "http://localhost:5000/api/v1/professor/excluir",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -251,7 +251,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"excluir"
 					]
 				}
@@ -278,7 +278,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/listar",
+					"raw": "http://localhost:5000/api/v1/professor/listar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -287,7 +287,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"listar"
 					]
 				}
@@ -359,7 +359,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/listar",
+					"raw": "http://localhost:5000/api/v1/professor/listar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -368,7 +368,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"listar"
 					]
 				}
