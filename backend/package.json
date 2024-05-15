@@ -10,6 +10,6 @@
     "restify": "^8.5.1",
     "pg": "^8.11.5"
   },
-  "author": "Thalita Domingos 1644",
+  "author": "Thalita Domingos",
   "license": "ISC"
 }

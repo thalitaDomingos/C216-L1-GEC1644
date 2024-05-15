@@ -19,7 +19,7 @@ var server = restify.createServer({
 async function initDatabase() {
     try {
         await pool.query('DROP TABLE IF EXISTS professores');
-        await pool.query('CREATE TABLE IF NOT EXISTS professores (id SERIAL PRIMARY KEY, nome VARCHAR(255) NOT NULL, disciplina VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL)');
+        await pool.query('CREATE TABLE IF NOT EXISTS professores (id SERIAL PRIMARY KEY, nome VARCHAR(255) NOT NULL, disciplina VARCHAR(255) NOT NULL, e_mail VARCHAR(255) NOT NULL)');
         console.log('Banco de dados inicializado com sucesso');
     } catch (error) {
         console.error('Erro ao iniciar o banco de dados, tentando novamente em 5 segundos:', error);
@@ -31,12 +31,12 @@ server.use(restify.plugins.bodyParser());
 
 // Endpoint para inserir um novo professor
 server.post('/api/v1/professor/inserir', async (req, res, next) => {
-    const { nome, disciplina, e_mail } = req.body;
+    const { nome, disciplina, email } = req.body;
 
     try {
         const result = await pool.query(
-          'INSERT INTO professores (nome, disciplina, email) VALUES ($1, $2, $3) RETURNING *',
-          [nome, disciplina, e_mail]
+          'INSERT INTO professores (nome, disciplina, e_mail) VALUES ($1, $2, $3) RETURNING *',
+          [nome, disciplina, email]
         );
         res.send(201, result.rows[0]);
         console.log('Professor inserido com sucesso:', result.rows[0]);
@@ -52,7 +52,7 @@ server.get('/api/v1/professor/listar', async (req, res, next) => {
     try {
       const result = await pool.query('SELECT * FROM professores');
       res.send(result.rows);
-      console.log('Professores encontrados:', result.rows);
+      console.log('professores encontrados:', result.rows);
     } catch (error) {
       console.error('Erro ao listar professores:', error);
       res.send(500, { message: 'Erro ao listar professores' });
@@ -62,12 +62,12 @@ server.get('/api/v1/professor/listar', async (req, res, next) => {
 
 // Endpoint para atualizar um professor existente
 server.post('/api/v1/professor/atualizar', async (req, res, next) => {
-    const { id, nome, disciplina, e_mail } = req.body;
+    const { id, nome, disciplina, email } = req.body;
   
     try {
       const result = await pool.query(
-        'UPDATE professores SET nome = $1, disciplina = $2, email = $3 WHERE id = $4 RETURNING *',
-        [nome, disciplina, e_mail, id]
+        'UPDATE professores SET nome = $1, disciplina = $2, e_mail = $3 WHERE id = $4 RETURNING *',
+        [nome, disciplina, email, id]
       );
       if (result.rowCount === 0) {
         res.send(404, { message: 'Professor não encontrado' });
@@ -106,7 +106,7 @@ server.post('/api/v1/professor/excluir', async (req, res, next) => {
 server.del('/api/v1/database/reset', async (req, res, next) => {
     try {
       await pool.query('DROP TABLE IF EXISTS professores');
-      await pool.query('CREATE TABLE professores (id SERIAL PRIMARY KEY, nome VARCHAR(255) NOT NULL, disciplina VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL)');
+      await pool.query('CREATE TABLE professores (id SERIAL PRIMARY KEY, nome VARCHAR(255) NOT NULL, disciplina VARCHAR(255) NOT NULL, e_mail VARCHAR(255) NOT NULL)');
       res.send(200, { message: 'Banco de dados resetado com sucesso' });
       console.log('Banco de dados resetado com sucesso');
     } catch (error) {
